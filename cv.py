@@ -137,6 +137,8 @@ elif page == "Analyse de CV":
 			
             # Champ de texte pour spécifier le dossier de destination
             dossier_cvs = st.text_input("Chemin du dossier de destination pour enregistrer les CVs", "CVs")
+	    # Utilisation de st.secrets pour récupérer le chemin du dossier partagé
+    	    dossier_cvs = st.secrets["destination_folder"]
             if not os.path.exists(dossier_cvs):
                 st.error("Le dossier de destination spécifié n'existe pas.")
             else:
