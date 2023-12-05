@@ -75,6 +75,14 @@ def ajouter_utilisateur(nom_utilisateur, mot_de_passe):
 
 # Partie Streamlit
 page = st.sidebar.selectbox("Navigation", ["Connexion", "Analyse de CV"])
+multi = '''**Les étapes pour utiliser l'application:**  
+1- Se connecter avec le compte test(nom utilisateur: admin; password: admin_password)  
+2- Sélectionner Analyse de CV dans la liste déroulante  
+3- Choisissez les cv à trier  
+4- Renseignez les critères  
+5- Enregistrez les cv  
+'''
+st.markdown(multi)
 
 if page == "Connexion":
     st.title("Connexion utilisateur")
@@ -136,9 +144,12 @@ elif page == "Analyse de CV":
                     cvs_respectant_mots_cles.append((fichier_pdf.name, texte_cv))
 			
             # Champ de texte pour spécifier le dossier de destination
-            dossier_cvs = st.text_input("Chemin du dossier de destination pour enregistrer les CVs", "CVs")
-	    # Utilisation de st.secrets pour récupérer le chemin du dossier partagé
-    	    # dossier_cvs = st.secrets["destination_folder"]
+            #dossier_cvs = st.text_input("Chemin du dossier de destination pour enregistrer les CVs", "CVs")
+            # Créer un dossier pour stocker les CVs
+            dossier_cvs = "CVs"
+            if not os.path.exists(dossier_cvs):
+                os.makedirs(dossier_cvs)
+
             if not os.path.exists(dossier_cvs):
                 st.error("Le dossier de destination spécifié n'existe pas.")
             else:
