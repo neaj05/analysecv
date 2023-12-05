@@ -3,8 +3,6 @@ import spacy
 import pdfplumber
 import os
 import sqlite3
-#from tkinter import filedialog
-#import tkinter as tk
 import pytesseract
 from passlib.hash import pbkdf2_sha256
 
