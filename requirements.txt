@@ -73,7 +73,6 @@ protobuf==4.24.4
 pyarrow==13.0.0
 pyasn1==0.5.0
 pyasn1-modules==0.3.0
-PyAudio @ file:///C:/Users/N%27DAH%20ARNAUD/pipwin/PyAudio-0.2.11-cp311-cp311-win_amd64.whl#sha256=5092b46bff5d6687db817bde4a71ffc50dd316cc2e490ee81908f0c95ef2644f
 pycparser==2.21
 pydantic==2.4.2
 pydantic_core==2.10.1
