@@ -142,8 +142,8 @@ elif page == "Analyse de CV":
             # Bouton pour enregistrer les CVs sélectionnés
             if cvs_respectant_mots_cles and st.button("Enregistrer les CVs sélectionnés"):
                 for nom_fichier, texte_cv in cvs_respectant_mots_cles:
-                    nom_fichier = f"cv_{nom_fichier.replace(' ', '_')}"
-                    chemin_fichier = os.path.join(dossier_cvs, f"{nom_fichier}")
+                    nom_fichier = "cv_{nom_fichier.replace(' ', '_')}"
+                    chemin_fichier = os.path.join(dossier_cvs, "{nom_fichier}")
                     with open(chemin_fichier, "w", encoding="utf-8") as fichier:
                         fichier.write(texte_cv)
                     st.success(f"Le CV {nom_fichier} a été enregistré dans le dossier {dossier_cvs} avec le nom: {nom_fichier}")
