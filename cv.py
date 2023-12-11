@@ -132,7 +132,7 @@ elif page == "Analyse de CV":
                 texte_cv = extraire_texte_pdf(fichier_pdf)
 
                 st.subheader(f"Texte extrait du CV - {fichier_pdf.name}:")
-                #st.write(texte_cv)
+                st.write(texte_cv)
 
                 mots_cles_trouves = analyser_cv(texte_cv, mots_cles)
 
